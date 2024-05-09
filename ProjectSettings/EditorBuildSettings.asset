@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Home.unity
+    guid: 3f322d2f8dc38c14eb617a6e41f53505
+  - enabled: 1
+    path: Assets/Scenes/DangKy.unity
+    guid: 82aad548cc9d7ee428eacec1b9c8e0b6
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 781530df3c7b74545a4a79ed45e9d77b
+  - enabled: 1
+    path: Assets/Scenes/NextMusic.unity
+    guid: 649c621d6994cd045b72ac11b6e4b508
+  - enabled: 1
+    path: Assets/Scenes/ListCat.unity
+    guid: 54454f1ef3221a141917af1d7dee21e9
+  - enabled: 1
+    path: Assets/Scenes/DangNhap.unity
+    guid: 2be77f3d0f753524095273fd2102c265
+  m_configObjects: {}

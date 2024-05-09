@@ -1,0 +1,37 @@
+<?php
+// Thông tin kết nối đến cơ sở dữ liệu
+$servername = "localhost";
+$username = "id21419526_truongan";
+$password = "Kaica@0564056521";
+$dbname = "id21419526_appdethi";
+
+// Kết nối đến cơ sở dữ liệu
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Kiểm tra kết nối
+if (!$conn) {
+    die("Kết nối thất bại: " . mysqli_connect_error());
+}
+
+// Đọc dữ liệu JSON từ yêu cầu
+$data = json_decode(file_get_contents("php://input"));
+error_log(print_r($data, true));
+echo $data->answersList;
+if ($data == null || !isset($data->answersList)) {
+    echo "Dữ liệu null hoặc thiếu trường answersList";
+} else {
+    foreach ($data->answersList as $answer) {
+        $idDeThi = $answer->id_DeThi;
+        $danAn = $answer->DanAn;
+        $sql = "INSERT INTO DanAn (id_DeThi, DanAn) VALUES ('$idDeThi', '$danAn')";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "Bản ghi đã được thêm thành công";
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+}
+
+mysqli_close($conn);
+?>
